@@ -1,4 +1,6 @@
-export default function ResultCard({ result, loading, history }) {
+export default function ResultCard({ result, loading, history = [] }) {
+  const safeHistory = Array.isArray(history) ? history : [];
+
   return (
     <section className="panel result-panel">
       <h2>Prediction Result</h2>
@@ -7,7 +9,7 @@ export default function ResultCard({ result, loading, history }) {
 
       {!loading && !result && <p>No prediction yet. Upload or capture an image.</p>}
 
-      {!loading && result?.success && (
+      {!loading && result?.prediction && (
         <div className="result-box">
           <h3>{result.prediction}</h3>
           <p>
@@ -19,7 +21,7 @@ export default function ResultCard({ result, loading, history }) {
         </div>
       )}
 
-      {!loading && result && !result.success && (
+      {!loading && result?.error && (
         <div className="error-box">
           <p>{result.error}</p>
         </div>
@@ -27,13 +29,17 @@ export default function ResultCard({ result, loading, history }) {
 
       <div className="history-box">
         <h3>Recent Predictions</h3>
-        {history.length === 0 ? (
+        {safeHistory.length === 0 ? (
           <p>No history yet.</p>
         ) : (
-          history.map((item, index) => (
+          safeHistory.map((item, index) => (
             <div key={index} className="history-item">
               <span>{item.prediction}</span>
-              <span>{item.confidence ? `${(item.confidence * 100).toFixed(1)}%` : "N/A"}</span>
+              <span>
+                {item.confidence !== null && item.confidence !== undefined
+                  ? `${(item.confidence * 100).toFixed(1)}%`
+                  : "N/A"}
+              </span>
               <span>{item.time}</span>
             </div>
           ))
