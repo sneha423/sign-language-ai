@@ -7,7 +7,7 @@ app = FastAPI(title="Sign Language Recognition System API")
 origins = [
     "http://localhost:5173",
     "http://127.0.0.1:5173",
-    "https://your-frontend-name.vercel.app"
+    "https://sign-language-ai-rose.vercel.app/"
 ]
 
 app.add_middleware(
