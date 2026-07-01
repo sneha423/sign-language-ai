@@ -1,0 +1,166 @@
+:root {
+  font-family: Inter, system-ui, sans-serif;
+  color: #e5eef7;
+  background: #0b1220;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(180deg, #0b1220 0%, #111827 100%);
+  min-height: 100vh;
+}
+
+.app-shell {
+  padding: 24px;
+}
+
+.header {
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  margin: 0 0 8px;
+  font-size: 2rem;
+}
+
+.header p {
+  margin: 0;
+  color: #9fb0c3;
+}
+
+.status-bar {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #111a2b;
+  border: 1px solid #22314a;
+  padding: 10px 14px;
+  border-radius: 999px;
+  margin-bottom: 24px;
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.status-dot.online {
+  background: #22c55e;
+}
+
+.status-dot.offline {
+  background: #ef4444;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 20px;
+}
+
+.panel-column {
+  display: grid;
+  gap: 20px;
+}
+
+.panel {
+  background: rgba(17, 26, 43, 0.92);
+  border: 1px solid #22314a;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.panel h2 {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.panel p {
+  color: #9fb0c3;
+}
+
+.upload-box {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 120px;
+  border: 2px dashed #3b4c68;
+  border-radius: 16px;
+  cursor: pointer;
+  color: #dce7f3;
+  background: #0f1728;
+}
+
+.camera-view {
+  width: 100%;
+  margin-top: 16px;
+  border-radius: 16px;
+  background: #000;
+  min-height: 280px;
+  object-fit: cover;
+}
+
+.action-btn {
+  margin-top: 16px;
+  width: 100%;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 14px;
+  padding: 14px 16px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.action-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.result-box {
+  background: #0f1728;
+  border: 1px solid #284066;
+  border-radius: 16px;
+  padding: 18px;
+  margin-top: 14px;
+}
+
+.result-box h3 {
+  margin: 0 0 10px;
+  font-size: 2rem;
+  color: #60a5fa;
+}
+
+.error-box {
+  margin-top: 14px;
+  background: #2a1115;
+  border: 1px solid #6b1d28;
+  color: #fecaca;
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.history-box {
+  margin-top: 24px;
+}
+
+.history-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 12px 0;
+  border-bottom: 1px solid #22314a;
+  color: #dbe7f3;
+}
+
+@media (max-width: 900px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
