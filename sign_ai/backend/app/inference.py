@@ -39,7 +39,7 @@ def extract_hand_keypoints(image_bgr: np.ndarray):
     keypoints = []
 
     for lm in hand_landmarks:
-        keypoints.extend([lm.x, lm.y, lm.z])
+        keypoints.extend([lm.x, lm.y])
 
     return np.array(keypoints, dtype=np.float32)
 
