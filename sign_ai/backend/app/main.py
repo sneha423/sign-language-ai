@@ -8,7 +8,7 @@ origins = [
     "http://localhost:5173",
     "http://127.0.0.1:5173",
     "https://sign-language-ai-rose.vercel.app",
-    "https://sign-language-rf5gfe2x9-sneha-guptas-projects-2c8c975f.vercel.app",
+    "https://sign-language-1wozj2ft7-sneha-guptas-projects-2c8c975f.vercel.app/",
 ]
 
 app.add_middleware(
